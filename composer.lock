@@ -1,0 +1,56 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "b17248de2c903e55aa5d33dfae9d9725",
+    "packages": [
+        {
+            "name": "izisaurio/json-to-array",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/izisaurio/json-to-array.git",
+                "reference": "13d82f517c2680348be8ea18ee1130e89bcaa94d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/izisaurio/json-to-array/zipball/13d82f517c2680348be8ea18ee1130e89bcaa94d",
+                "reference": "13d82f517c2680348be8ea18ee1130e89bcaa94d",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JsonToArray\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "izisaurio",
+                    "email": "izi.isaac@gmail.com"
+                }
+            ],
+            "description": "Json file to PHP array",
+            "support": {
+                "issues": "https://github.com/izisaurio/json-to-array/issues",
+                "source": "https://github.com/izisaurio/json-to-array/tree/1.0.2"
+            },
+            "time": "2022-02-27T01:16:16+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
+}

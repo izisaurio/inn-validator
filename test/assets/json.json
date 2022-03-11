@@ -1,0 +1,23 @@
+{
+	"isRequired": "%s es requerido(a)",
+	"isInt": "%s debe ser un número entero",
+	"isNumeric": "%s debe ser un número",
+	"isDecimal": "%s debe ser un número decimal",
+	"isSafeText": "%s contiene caracteres no permitidos",
+	"isDatetime": "%s debe ser una fecha válida",
+	"isDate": "%s debe ser una fecha válida",
+	"isTime": "%s debe ser una hora válida",
+	"isBool": "%s debe ser verdadero o falso",
+	"isEmail": "%s debe ser un correo electrónico válido",
+	"regex": "%s tiene un formato incorrecto",
+	"minLength": "%s no puede ser menor a %s caracteres",
+	"maxLength": "%s no puede ser mayor a %s caracteres",
+	"min": "%s no puede ser menor a %s",
+	"max": "%s no puede ser mayor a %s",
+	"greater": "%s debe ser mayor a %s",
+	"greaterDate": "%s debe ser mayor a %s",
+	"greaterDatetime": "%s debe ser mayor a %s",
+	"less": "%s debe ser menor a %s",
+	"lessDate": "%s debe ser menor a %s",
+	"lessDatetime": "%s debe ser menor a %s"
+}

@@ -4,8 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b17248de2c903e55aa5d33dfae9d9725",
-    "packages": [
+    "content-hash": "73a69b2195a3d64e930f81ba333c24e3",
+    "packages": [],
+    "packages-dev": [
         {
             "name": "izisaurio/json-to-array",
             "version": "1.0.2",
@@ -44,7 +45,6 @@
             "time": "2022-02-27T01:16:16+00:00"
         }
     ],
-    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],

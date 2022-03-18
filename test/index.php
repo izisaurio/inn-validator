@@ -43,7 +43,7 @@ $dataObject = new DataObject(
 			'label' => 'Email',
 		],
 	],
-	'assets/json.json'
+	$json->data
 );
 
 $result = $dataObject->validate();

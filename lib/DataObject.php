@@ -50,16 +50,16 @@ class DataObject
 	 * Sets json file with messages
 	 *
 	 * @access	public
-	 * @param	mixed	$data	Data object to validate
-	 * @param	array	$rules	Validation rules
-	 * @param	string	$path	Json file path
+	 * @param	mixed	$data		Data object to validate
+	 * @param	array	$rules		Validation rules
+	 * @param	array	$messages	Array error messages
 	 */
-	public function __construct($data, array $rules, $path = null)
+	public function __construct($data, array $rules, array $messages = null)
 	{
 		$this->data = $data;
 		$this->rules = $rules;
-		if (isset($path)) {
-			$this->messages = new Json($path);
+		if (isset($messages)) {
+			$this->messages = $messages;
 		}
 	}
 

@@ -9,7 +9,7 @@
             "email": "izi.isaac@gmail.com"
         }
     ],
-    "require": {
+    "require-dev": {
         "izisaurio/json-to-array": "^1.0"
     },
     "autoload": {

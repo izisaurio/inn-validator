@@ -2,8 +2,6 @@
 
 namespace Inn\Validator;
 
-use JsonToArray\Json;
-
 /**
  * Single value to validate
  *
@@ -60,9 +58,9 @@ class DataValue
 	 * @access	public
 	 * @param	mixed	$value		Value to validate
 	 * @param	string	$name		Value name|label
-	 * @param	Json	$messages	Errors json
+	 * @param	array	$messages	Errors array messages
 	 */
-	public function __construct($value, $name, Json $messages = null)
+	public function __construct($value, $name, array $messages = null)
 	{
 		$this->value = \trim($value);
 		$this->name = $name;

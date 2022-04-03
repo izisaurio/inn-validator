@@ -24,7 +24,6 @@ if (!$result) {
 $dataObject = new DataObject(
 	[
 		'name' => 'izisaurio',
-		'age' => 30,
 		'email' => 'izi.isaac@gmail',
 	],
 	[

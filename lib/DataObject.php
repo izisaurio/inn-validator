@@ -74,14 +74,11 @@ class DataObject
 	public function validate()
 	{
 		$data = (array) $this->data;
-		foreach ($data as $key => $value) {
+		foreach ($this->rules as $key => $ruleSet) {
 			if (!isset($this->rules[$key])) {
 				continue;
 			}
-			$ruleSet = $this->rules[$key];
-			if (!is_array($ruleSet)) {
-				continue;
-			}
+			$value = isset($data[$key]) ? $data[$key] : '';
 			$dataValue = new DataValue(
 				$value,
 				$this->getLabel($key),

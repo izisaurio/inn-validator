@@ -214,7 +214,11 @@ class DataValue
 	public function isBool()
 	{
 		if (
-			!in_array($this->value, [true, false, 1, 0, 'yes', 'no', '1', '0'], true)
+			!in_array(
+				$this->value,
+				[true, false, 1, 0, 'yes', 'no', '1', '0'],
+				true
+			)
 		) {
 			$this->addError('isBool', [$this->name]);
 		}
@@ -275,6 +279,36 @@ class DataValue
 	public function maxLength($length)
 	{
 		if (\strlen($this->value) > $length) {
+			$this->addError('maxLength', [$this->name, $length]);
+		}
+		return $this;
+	}
+
+	/**
+	 * Validates value min length
+	 *
+	 * @access	public
+	 * @param	int		$length		Min length value
+	 * @return	DataValue
+	 */
+	public function mbMinLength($length)
+	{
+		if (\mb_strlen($this->value) < $length) {
+			$this->addError('minLength', [$this->name, $length]);
+		}
+		return $this;
+	}
+
+	/**
+	 * Validates value max length
+	 *
+	 * @access	public
+	 * @param	int		$length		Max length value
+	 * @return	DataValue
+	 */
+	public function mbMaxLength($length)
+	{
+		if (\mb_strlen($this->value) > $length) {
 			$this->addError('maxLength', [$this->name, $length]);
 		}
 		return $this;

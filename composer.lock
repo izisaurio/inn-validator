@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "73a69b2195a3d64e930f81ba333c24e3",
+    "content-hash": "b46f5ee2d11ef2bddfc8fb08256ceca8",
     "packages": [],
     "packages-dev": [
         {
@@ -43,6 +43,43 @@
                 "source": "https://github.com/izisaurio/json-to-array/tree/1.0.2"
             },
             "time": "2022-02-27T01:16:16+00:00"
+        },
+        {
+            "name": "izisaurio/request-params",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/izisaurio/request-params.git",
+                "reference": "96d165c52dc4bd8df8cacc74aacbaa64de41524c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/izisaurio/request-params/zipball/96d165c52dc4bd8df8cacc74aacbaa64de41524c",
+                "reference": "96d165c52dc4bd8df8cacc74aacbaa64de41524c",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RequestParams\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "izisaurio",
+                    "email": "izi.isaac@gmail.com"
+                }
+            ],
+            "description": "A simple PHP request param fetcher",
+            "support": {
+                "issues": "https://github.com/izisaurio/request-params/issues",
+                "source": "https://github.com/izisaurio/request-params/tree/1.0.3"
+            },
+            "time": "2022-08-03T03:32:41+00:00"
         }
     ],
     "aliases": [],

@@ -10,7 +10,8 @@
         }
     ],
     "require-dev": {
-        "izisaurio/json-to-array": "^1.0"
+        "izisaurio/json-to-array": "^1.0",
+		"izisaurio/request-params": "^1.0"
     },
     "autoload": {
         "psr-4": {

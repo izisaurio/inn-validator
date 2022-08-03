@@ -11,11 +11,13 @@ if (Server::key('REQUEST_METHOD') === 'POST') {
 	if (!$file->validate()) {
 		var_dump($file->getErrors());
 	} else {
-		$file->move('assets/newFile.jpg');
+		var_dump($file->prop);
+		var_dump($file->prop->name, $file->prop->type, $file->extension);
+		//$file->move('assets/newFile.jpg');
 	}
 	exit();
-
 }
+
 ?>
 
 <!DOCTYPE html>

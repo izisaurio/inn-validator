@@ -19,6 +19,22 @@ class FileValue
 	private $file;
 
 	/**
+	 * File properties public copy
+	 *
+	 * @access	public
+	 * @var		stdClass
+	 */
+	public $prop;
+
+	/**
+	 * File extension
+	 *
+	 * @access	public
+	 * @var		string
+	 */
+	public $extension;
+
+	/**
 	 * Value name|label to use in errors
 	 *
 	 * @access	private
@@ -63,6 +79,8 @@ class FileValue
 	public function __construct(array $file, $name, array $messages = null)
 	{
 		$this->file = $file;
+		$this->prop = (object) $file;
+		$this->extension = pathinfo($this->file['name'], PATHINFO_EXTENSION);
 		$this->name = $name;
 		$this->messages = $messages;
 		$this->methods = \array_diff(\get_class_methods($this), [

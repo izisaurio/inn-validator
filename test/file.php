@@ -10,10 +10,12 @@ if (Server::key('REQUEST_METHOD') === 'POST') {
 	$file->isOk();
 	if (!$file->validate()) {
 		var_dump($file->getErrors());
+	} else {
+		$file->move('assets/newFile.jpg');
 	}
 	exit();
-}
 
+}
 ?>
 
 <!DOCTYPE html>

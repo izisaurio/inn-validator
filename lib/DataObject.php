@@ -37,6 +37,14 @@ class DataObject
 	public $messages;
 
 	/**
+	 * Language for multilanguage labels, label must be an array
+	 *
+	 * @access	private
+	 * @var		string
+	 */
+	private $langKey;
+
+	/**
 	 * Errors found on object
 	 *
 	 * @access	private
@@ -53,14 +61,20 @@ class DataObject
 	 * @param	mixed	$data		Data object to validate
 	 * @param	array	$rules		Validation rules
 	 * @param	array	$messages	Array error messages
+	 * @param	string	$langKey	Language key for multilanguage labels
 	 */
-	public function __construct($data, array $rules, array $messages = null)
-	{
+	public function __construct(
+		$data,
+		array $rules,
+		array $messages = null,
+		$langKey = null
+	) {
 		$this->data = $data;
 		$this->rules = $rules;
 		if (isset($messages)) {
 			$this->messages = $messages;
 		}
+		$this->langKey = $langKey;
 	}
 
 	/**
@@ -116,8 +130,15 @@ class DataObject
 	 */
 	private function getLabel($key)
 	{
-		return isset($this->rules[$key]) && isset($this->rules[$key]['label'])
-			? $this->rules[$key]['label']
+		if (!isset($this->rules[$key]) || !isset($this->rules[$key]['label'])) {
+			return $key;
+		}
+		if (!is_array($this->rules[$key]['label'])) {
+			return $this->rules[$key]['label'];
+		}
+		return isset($this->langKey) &&
+			isset($this->rules[$key]['label'][$this->langKey])
+			? $this->rules[$key]['label'][$this->langKey]
 			: $key;
 	}
 

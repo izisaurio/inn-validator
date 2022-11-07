@@ -2,6 +2,8 @@
 
 namespace Inn\Validator;
 
+use \DateTime;
+
 /**
  * Single value to validate
  *

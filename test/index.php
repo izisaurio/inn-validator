@@ -21,6 +21,17 @@ if (!$result) {
 	var_dump($value->getErrors());
 }
 
+$date = new DataValue('2022-01-01', 'fecha');
+
+$result = $date
+	->isRequired()
+	->lessDate('2030-01-01', 'Future')
+	->validate();
+
+if (!$result) {
+	var_dump($date->getErrors());
+}
+
 $dataObject = new DataObject(
 	[
 		'name' => 'izisaurio',

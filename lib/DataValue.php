@@ -64,7 +64,7 @@ class DataValue
 	 */
 	public function __construct($value, $name, array $messages = null)
 	{
-		$this->value = \trim($value);
+		$this->value = \is_array($value) ? $value : \trim($value);
 		$this->name = $name;
 		$this->messages = $messages;
 		$this->methods = \array_diff(\get_class_methods($this), [
@@ -237,6 +237,20 @@ class DataValue
 	{
 		if (\filter_var($this->value, FILTER_VALIDATE_EMAIL) === false) {
 			$this->addError('isEmail', [$this->name]);
+		}
+		return $this;
+	}
+
+	/**
+	 * Validates value is array
+	 *
+	 * @access	public
+	 * @return	DataValue
+	 */
+	public function isArray()
+	{
+		if (!\is_array($this->value)) {
+			$this->addError('isArray', [$this->name]);
 		}
 		return $this;
 	}

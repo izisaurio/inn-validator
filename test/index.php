@@ -47,6 +47,7 @@ $dataObject = new DataObject(
 			'isInt' => true,
 			'max' => 25,
 			'label' => 'Age',
+			'isNullable' => true,
 		],
 		'email' => [
 			'isEmail' => true,

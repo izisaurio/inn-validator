@@ -89,7 +89,7 @@ class DataObject
 	{
 		$data = (array) $this->data;
 		foreach ($this->rules as $key => $ruleSet) {
-			if (!isset($this->rules[$key])) {
+			if (isset($ruleSet['isNullable']) && !isset($data[$key])) {
 				continue;
 			}
 			$value = isset($data[$key]) ? $data[$key] : '';

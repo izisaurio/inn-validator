@@ -83,7 +83,7 @@ class DataValue
 	 */
 	public function isRequired()
 	{
-		if ($this->value == '') {
+		if ($this->value === '') {
 			$this->addError('isRequired', [$this->name]);
 		}
 		return $this;

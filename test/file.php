@@ -7,6 +7,7 @@ use Inn\Validator\FileValue, RequestParams\Server, RequestParams\Files;
 if (Server::key('REQUEST_METHOD') === 'POST') {
 	$file = new FileValue(Files::key('file'), 'file');
 	var_dump($file->isUploaded());
+	exit;
 	$file->isOk();
 	if (!$file->validate()) {
 		var_dump($file->getErrors());

@@ -97,7 +97,7 @@ class DataValue
 	 */
 	public function isInt()
 	{
-		if (!\ctype_digit($this->value) && !\is_int($this->value)) {
+		if (!\is_int($this->value) && !\ctype_digit($this->value)) {
 			$this->addError('isInt', [$this->name]);
 		}
 		return $this;

@@ -487,6 +487,70 @@ class DataValue
 	}
 
 	/**
+	 * Validates value is equal to other
+	 *
+	 * @access	public
+	 * @param	mixed		$to		Value to compare to
+	 * @param	mixed		$toName	Value to compare to name
+	 * @return	DataValue
+	 */
+	public function equal($to, $toName)
+	{
+		if ($this->value != $to) {
+			$this->addError('equal', [$this->name, $toName]);
+		}
+		return $this;
+	}
+
+	/**
+	 * Validates value is different from other
+	 * 
+	 * @access	public
+	 * @param	mixed		$to		Value to compare to
+	 * @param	mixed		$toName	Value to compare to name
+	 * @return	DataValue
+	 */
+	public function notEqual($to, $toName)
+	{
+		if ($this->value == $to) {
+			$this->addError('notEqual', [$this->name, $toName]);
+		}
+		return $this;
+	}
+
+	/**
+	 * Validates date is exactly equal to other
+	 *
+	 * @access	public
+	 * @param	mixed		$to		Value to compare to
+	 * @param	mixed		$toName	Value to compare to name
+	 * @return	DataValue
+	 */
+	public function exactly($to, $toName)
+	{
+		if ($this->value !== $to) {
+			$this->addError('exactly', [$this->name, $toName]);
+		}
+		return $this;
+	}
+
+	/**
+	 * Validates date is different from other
+	 * 
+	 * @access	public
+	 * @param	mixed		$to		Value to compare to
+	 * @param	mixed		$toName	Value to compare to name
+	 * @return	DataValue
+	 */
+	public function notExactly($to, $toName)
+	{
+		if ($this->value === $to) {
+			$this->addError('notExactly', [$this->name, $toName]);
+		}
+		return $this;
+	}
+
+	/**
 	 * Returns the value validation
 	 *
 	 * @access	public

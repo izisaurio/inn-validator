@@ -46,16 +46,16 @@
         },
         {
             "name": "izisaurio/request-params",
-            "version": "1.0.3",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/izisaurio/request-params.git",
-                "reference": "96d165c52dc4bd8df8cacc74aacbaa64de41524c"
+                "reference": "eef5f8f619712d698eea0c0fb5c83bc924348eb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/izisaurio/request-params/zipball/96d165c52dc4bd8df8cacc74aacbaa64de41524c",
-                "reference": "96d165c52dc4bd8df8cacc74aacbaa64de41524c",
+                "url": "https://api.github.com/repos/izisaurio/request-params/zipball/eef5f8f619712d698eea0c0fb5c83bc924348eb0",
+                "reference": "eef5f8f619712d698eea0c0fb5c83bc924348eb0",
                 "shasum": ""
             },
             "type": "library",
@@ -77,9 +77,9 @@
             "description": "A simple PHP request param fetcher",
             "support": {
                 "issues": "https://github.com/izisaurio/request-params/issues",
-                "source": "https://github.com/izisaurio/request-params/tree/1.0.3"
+                "source": "https://github.com/izisaurio/request-params/tree/1.0.6"
             },
-            "time": "2022-08-03T03:32:41+00:00"
+            "time": "2023-12-27T16:53:27+00:00"
         }
     ],
     "aliases": [],

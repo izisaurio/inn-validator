@@ -78,6 +78,17 @@ class DataObject
 	}
 
 	/**
+	 * Gets the default messages array
+	 * 
+	 * @static
+	 * @access	public
+	 * @return	array
+	 */
+	public static function getDefaultMessages() {
+		return require __DIR__ . '/errors.php';
+	}
+
+	/**
 	 * Validates an object wth the given rules
 	 *
 	 * @access	public

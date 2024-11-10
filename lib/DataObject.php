@@ -2,8 +2,6 @@
 
 namespace Inn\Validator;
 
-use JsonToArray\Json;
-
 /**
  * Object values validator class
  *
@@ -29,10 +27,10 @@ class DataObject
 	private $rules;
 
 	/**
-	 * Json file containing error messages
+	 * Array containing error messages
 	 *
 	 * @access	public
-	 * @var		Json
+	 * @var		array
 	 */
 	public $messages;
 
@@ -51,6 +49,14 @@ class DataObject
 	 * @var		array
 	 */
 	private $errors = [];
+
+	/**
+	 * Errors found on object by key
+	 * 
+	 * @access	private
+	 * @var		array
+	 */
+	private $errorsByKey = [];
 
 	/**
 	 * Construct
@@ -106,6 +112,7 @@ class DataObject
 			$value = isset($data[$key]) ? $data[$key] : '';
 			$dataValue = new DataValue(
 				$value,
+				$key,
 				$this->getLabel($key),
 				$this->messages
 			);
@@ -126,7 +133,7 @@ class DataObject
 				\call_user_func_array([$dataValue, $rule], $params);
 			}
 			if (!$dataValue->validate()) {
-				$this->addErrors($dataValue->getErrors());
+				$this->addErrors($dataValue->getErrors(), $dataValue->getErrorsByName());
 			}
 		}
 		return empty($this->errors);
@@ -165,13 +172,26 @@ class DataObject
 	}
 
 	/**
+	 * Returns the value validation errors by key
+	 *
+	 * @access	public
+	 * @return	array
+	 */
+	public function getErrorsByKey()
+	{
+		return $this->errorsByKey;
+	}
+
+	/**
 	 * Pushes errors in error array
 	 *
 	 * @access	private
-	 * @param	array	$errors		Values to push
+	 * @param	array	$errors			Values to push
+	 * @param	array	$errorsByKey	Values to push by key
 	 */
-	private function addErrors(array $errors)
+	private function addErrors(array $errors, array $errorsByKey)
 	{
 		$this->errors = \array_merge($this->errors, $errors);
+		$this->errorsByKey = \array_merge($this->errorsByKey, $errorsByKey);
 	}
 }

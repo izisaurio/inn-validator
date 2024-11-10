@@ -21,6 +21,14 @@ class DataValue
 	private $value;
 
 	/**
+	 * Value key to use in errors
+	 *
+	 * @access	private
+	 * @var		string
+	 */
+	private $key;
+
+	/**
 	 * Value name|label to use in errors
 	 *
 	 * @access	private
@@ -32,7 +40,7 @@ class DataValue
 	 * Json with error messages
 	 *
 	 * @access	public
-	 * @var		Json
+	 * @var		array
 	 */
 	public $messages;
 
@@ -43,6 +51,14 @@ class DataValue
 	 * @var		array
 	 */
 	private $errors = [];
+
+	/**
+	 * Errros found on value by key
+	 * 
+	 * @access	private
+	 * @var		array
+	 */
+	private $errorsByKey = [];
 
 	/**
 	 * Has the current validation methods by name
@@ -62,9 +78,10 @@ class DataValue
 	 * @param	string	$name		Value name|label
 	 * @param	array	$messages	Errors array messages
 	 */
-	public function __construct($value, $name, array $messages = null)
+	public function __construct($value, $key, $name, array $messages = null)
 	{
 		$this->value = !\is_string($value) ? $value : \trim($value);
+		$this->key = $key;
 		$this->name = $name;
 		$this->messages = $messages;
 		$this->methods = \array_diff(\get_class_methods($this), [
@@ -573,6 +590,17 @@ class DataValue
 	}
 
 	/**
+	 * Returns the value validation errors by name
+	 *
+	 * @access	public
+	 * @return	array
+	 */
+	public function getErrorsByName()
+	{
+		return $this->errorsByKey;
+	}
+
+	/**
 	 * Adds a message to the error collection
 	 *
 	 * @access	private
@@ -581,11 +609,14 @@ class DataValue
 	 */
 	private function addError($key, array $attrs = [])
 	{
+		$name = $this->key;
 		if (isset($this->messages)) {
 			$this->errors[] = \vsprintf($this->messages[$key], $attrs);
+			$this->errorsByKey[$name][] = \vsprintf($this->messages[$key], $attrs);
 			return;
 		}
 		$attr = \join(', ', $attrs);
 		$this->errors[] = "{$attr} {$key}";
+		$this->errorsByKey[$name][] = "{$attr} {$key}";
 	}
 }

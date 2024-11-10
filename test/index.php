@@ -8,7 +8,7 @@ use Inn\Validator\DataObject;
 
 $json = new Json('assets/json.json');
 
-$value = new DataValue('i', 'nombre');
+$value = new DataValue('i', 'nombre', 'Nombre');
 
 $result = $value
 	->isRequired()
@@ -21,7 +21,7 @@ if (!$result) {
 	var_dump($value->getErrors());
 }
 
-$date = new DataValue('2022-01-01', 'fecha');
+$date = new DataValue('2022-01-01', 'fecha', 'Fecha');
 
 $result = $date
 	->isRequired()
@@ -63,4 +63,5 @@ var_dump($result);
 
 if (!$result) {
 	var_dump($dataObject->getErrors());
+	var_dump($dataObject->getErrorsByKey());
 }

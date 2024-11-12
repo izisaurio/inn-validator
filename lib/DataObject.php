@@ -78,7 +78,7 @@ class DataObject
 		$this->data = $data;
 		$this->rules = $rules;
 		if (isset($messages)) {
-			$this->messages = $messages;
+			$this->messages = isset($langKey) ? $messages[$langKey] : $messages;
 		}
 		$this->langKey = $langKey;
 	}

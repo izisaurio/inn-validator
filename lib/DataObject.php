@@ -118,7 +118,7 @@ class DataObject
 			);
 			$dataValue->isRequired();
 			if (!$dataValue->validate()) {
-				$this->addErrors($dataValue->getErrors());
+				$this->addErrors($dataValue->getErrors(), $dataValue->getErrorsByKey());
 				continue;
 			}
 			foreach ($ruleSet as $rule => $param) {
@@ -133,7 +133,7 @@ class DataObject
 				\call_user_func_array([$dataValue, $rule], $params);
 			}
 			if (!$dataValue->validate()) {
-				$this->addErrors($dataValue->getErrors(), $dataValue->getErrorsByName());
+				$this->addErrors($dataValue->getErrors(), $dataValue->getErrorsByKey());
 			}
 		}
 		return empty($this->errors);

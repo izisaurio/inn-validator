@@ -595,7 +595,7 @@ class DataValue
 	 * @access	public
 	 * @return	array
 	 */
-	public function getErrorsByName()
+	public function getErrorsByKey()
 	{
 		return $this->errorsByKey;
 	}
